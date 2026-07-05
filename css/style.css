@@ -1,0 +1,1069 @@
+/* ================================================================
+   RESET & BASE STYLES
+================================================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: white;
+    color: #333333;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Georgia', serif;
+    line-height: 1.25;
+}
+h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+h3, h4 {
+    text-align: center;
+}
+/* Default section padding applied to every section */
+section {
+    padding: 64px 32px;
+}
+
+
+/* ================================================================
+   SHARED — HEADER & NAVIGATION
+   Sticky top bar with logo and nav links — present on every page
+================================================================ */
+#main-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 32px;
+    background-color: white;
+    box-shadow: 0 2px 8px darkorange;
+    border-bottom: 1px solid gainsboro;
+    /* lets logo + nav drop to a second line instead of overflowing before the column breakpoint kicks in */
+    flex-wrap: wrap;
+}
+.logo {
+    display: flex;
+}
+.logo img {
+    height: 82px;
+}
+#main-nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    /* same reasoning as #main-header — wrap instead of forcing horizontal scroll */
+    flex-wrap: wrap;
+}
+#main-nav a {
+    color: #1A1A2E;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 7px 14px;
+    border-radius: 4px;
+}
+#main-nav a:hover {
+    color: steelblue;
+    background-color: aliceblue;
+}
+/* Highlighted link for the current page */
+#main-nav a.active {
+    color: darkorange;
+    background-color: floralwhite;
+}
+
+
+/* ================================================================
+   SHARED — BUTTONS
+   Reusable button styles used across all pages
+================================================================ */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: 2px solid transparent;
+    text-align: center;
+}
+/* Orange primary button */
+.btn-primary {
+    background-color: darkorange;
+    color: white;
+    border-color: darkorange;
+}
+.btn-primary:hover {
+    background-color: chocolate;
+    border-color: chocolate;
+}
+/* Outline button — transparent with a steelblue border */
+.btn-outline {
+    background-color: transparent;
+    color: steelblue;
+    border-color: steelblue;
+}
+.btn-outline:hover {
+    background-color: steelblue;
+    color: white;
+}
+/* Teal secondary button */
+.btn-secondary {
+    background-color: deepskyblue;
+    color: white;
+    border-color: deepskyblue;
+}
+.btn-secondary:hover {
+    background-color: cadetblue;
+    border-color: cadetblue;
+}
+
+
+/* ================================================================
+   SHARED — HERO BANNER
+   #hero      = full-screen hero on the Home page
+   #page-hero = shorter banner at the top of all inner pages
+================================================================ */
+
+/* Home page full-screen hero */
+#hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url('../images/your-hero-photo1.jpeg');
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+/* Dark overlay on home hero */
+#hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #1A1A2E;
+    opacity: 0.7;
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    padding: 32px;
+}
+.hero-content h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 16px;
+    text-shadow: 0 3px 10px black;
+}
+.hero-content p {
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 32px;
+    text-shadow: 0 1px 5px black;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-content .btn {
+    margin: 4px 8px;
+}
+/* Inner page shorter banner (Destinations, Packages, Reviews, Booking, About) */
+#page-hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #1A1A2E;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+/* Dark overlay on inner page banners */
+#page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #1A1A2E;
+    opacity: 0.7;
+}
+#page-hero h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 8px black;
+}
+#page-hero p {
+    position: relative;
+    z-index: 1;
+    font-size: 1.05rem;
+    color: white;
+    max-width: 580px;
+}
+
+/* ================================================================
+   SHARED — DESTINATION CARDS
+   Used on: Home page (2-up featured) and Destinations page (full grid)
+================================================================ */
+.destination-card {
+    background: white;
+    border-radius: 8px;
+    border: 1px solid gainsboro;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+.destination-card:hover {
+    box-shadow: 0 8px 24px cadetblue;
+}
+/* Card photo */
+.destination-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+/* Card text area */
+.destination-card .card-body {
+    padding: 16px;
+}
+.destination-card h3 {
+    font-size: 1.1rem;
+    color: steelblue;
+    margin-bottom: 4px;
+}
+.destination-card p {
+    color: gray;
+    font-size: 0.88rem;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+/* Full-width "View Packages" button at card bottom */
+.dest-view-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 16px;
+}
+
+/* ================================================================
+   SHARED — PACKAGE CARDS
+   Used on: Home page (2-up preview) and Packages page (full grid)
+================================================================ */
+.package-card {
+    background: white;
+    border-radius: 8px;
+    border: 1px solid gainsboro;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: hidden;
+}
+/* Card photo bleeds to the edges */
+.package-card img {
+    width: calc(100% + 64px);
+    height: 180px;
+    object-fit: cover;
+    margin: -32px -32px 8px;
+    border-radius: 8px 8px 0 0;
+}
+.package-card:hover {
+    box-shadow: 0 8px 24px cadetblue;
+}
+.package-card h3 {
+    font-size: 1.1rem;
+    color: steelblue;
+}
+/* Price display */
+.package-card .package-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: darkorange;
+}
+.package-card .package-price span {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: gray;
+}
+/* What's included checklist */
+.package-card ul {
+    list-style: disc;
+    padding-left: 20px;
+    flex: 1;
+}
+.package-card ul li {
+    font-size: 0.88rem;
+    color: #333333;
+    padding: 3px 0;
+}
+.package-card .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+/* Taller image for featured homepage cards */
+.package-card--featured img {
+    height: 250px;
+}
+
+
+
+/* ================================================================
+   SHARED — REVIEW CARDS
+   Used on: Home page (3-up preview) and Reviews page (full list)
+================================================================ */
+
+/* Centred grid used on both pages */
+#reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 32px;
+    margin: 0 auto 32px;
+    max-width: 1100px;
+    text-align: left;
+}
+.review-card {
+    background: white;
+    border-radius: 8px;
+    padding: 32px;
+}
+
+.review-card:hover {
+    box-shadow: 0 8px 24px cadetblue;
+}
+.review-card .reviewer-name {
+    font-weight: 700;
+    color: #1A1A2E;
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+.review-card .review-destination {
+    display: block;
+    font-size: 0.82rem;
+    color: gray;
+    margin-bottom: 6px;
+}
+.review-card .review-rating {
+    display: block;
+    color: goldenrod;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+.review-card .review-text {
+    color: #333333;
+    font-size: 0.92rem;
+    font-style: italic;
+    line-height: 1.65;
+    margin-bottom: 8px;
+}
+.review-card .review-date {
+    font-size: 0.78rem;
+    color: gray;
+}
+
+/* ================================================================
+   SHARED — FORM ELEMENTS
+   Used on: Reviews page (leave a review) and Booking page
+================================================================ */
+.form-group {
+    margin-bottom: 16px;
+}
+.form-group label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 4px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 4px;
+    border: 1px solid silver;
+    font-size: 0.95rem;
+    font-family: 'Arial', sans-serif;
+    color: #333333;
+    background: white;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+}
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+/* Inline validation error shown when field is invalid */
+.form-group .error-msg {
+    display: none;
+    color: crimson;
+    font-size: 0.78rem;
+    margin-top: 4px;
+}
+.error-msg:not(:empty) {
+    display: block;
+}
+/* Red asterisk on required field labels */
+.required {
+    color: crimson;
+    margin-left: 2px;
+}
+/* Submit / Reset button row */
+.form-submit {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+
+/* ================================================================
+   SHARED — FOOTER
+   Contact info and copyright — present on every page
+================================================================ */
+#main-footer {
+    background-color: white;
+    color: #333333;
+    padding: 42px;
+    border-top: 1px solid gainsboro;
+}
+.footer-col p {
+    font-size: 14px;
+    color: gray;
+    text-align: center;
+}
+.footer-bottom {
+    text-align: center;
+    padding-top: 16px;
+    font-size: 14px;
+    color: gray;
+}
+
+/* ================================================================
+   HOME PAGE  (index.html)
+================================================================ */
+/* Featured Destinations — 2-column grid */
+#featured-destinations {
+    background: aliceblue;
+    text-align: center;
+}
+#destinations-container {
+    display: grid;
+    /* auto-fit reflows to 1 column on narrow screens instead of squeezing a fixed 2-up grid */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    max-width: 880px;
+    margin: 0 auto 32px;
+    text-align: left;
+}
+/* Packages Preview — 2-column grid */
+#packages-preview {
+    background-color: white;
+    text-align: center;
+}
+#packages-container {
+    display: grid;
+    /* same fix as #destinations-container — reflow instead of a fixed 2-up grid */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    max-width: 880px;
+    margin: 0 auto 32px;
+    text-align: left;
+}
+/* Gallery Slider */
+#gallery {
+    background-color: #1A1A2E;
+    color: white;
+    text-align: center;
+}
+#gallery-slider {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#slides-container {
+    flex: 1;
+    border-radius: 8px;
+}
+#slides-container img {
+    width: 100%;
+    border-radius: 8px;
+}
+.slide {
+    position: relative;
+    width: 100%;
+}
+/* Caption overlay at bottom of each slide */
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    color: white;
+    padding: 16px;
+}
+/* Prev / Next navigation buttons */
+#prev-slide,
+#next-slide {
+    background: steelblue;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+}
+#prev-slide:hover,#next-slide:hover {
+    background: darkorange;
+}
+/* Reviews Preview — uses shared #reviews-container and .review-card */
+#reviews-preview {
+    background-color: aliceblue;
+    text-align: center;
+}
+/* Call To Action banner */
+#cta {
+    background: darkorange;
+    color: white;
+    text-align: center;
+}
+/* Inverted button inside the orange CTA banner */
+#cta .btn-primary {
+    background-color: white;
+    color: darkorange;
+    border-color: white;
+    margin: 1%;
+}
+#cta .btn-primary:hover {
+    background-color: #1A1A2E;
+    color: white;
+    border-color: #1A1A2E;}
+
+/* ================================================================
+   DESTINATIONS PAGE  (destinations.html)
+================================================================ */
+/* Search input and region dropdown filter bar */
+#destinations-filter {
+    background: white;
+    padding: 16px 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid aliceblue;
+}
+#destinations-filter input,#destinations-filter select {
+    padding: 10px 14px;
+    border-radius: 4px;
+    border: 1px solid silver;
+    font-size: 0.92rem;
+    color: #333333;
+    min-width: 200px;
+    background: white;
+}
+#destinations-filter input:focus,#destinations-filter select:focus {
+    outline: none;
+}
+/* Full destinations card grid */
+#destinations-page {
+    background: aliceblue;
+    text-align: center;
+}
+#destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 32px;
+    margin-bottom: 32px;
+    text-align: left;
+}
+
+/* ================================================================
+   PACKAGES PAGE  (packages.html)
+================================================================ */
+
+/* Destination and budget type filter bar */
+#packages-filter {
+    background: white;
+    padding: 16px 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid aliceblue;
+}
+#packages-filter select {
+    padding: 10px 14px;
+    border-radius: 4px;
+    border: 1px solid silver;
+    font-size: 0.92rem;
+    color: #333333;
+    min-width: 200px;
+    background: white;
+}
+#packages-filter select:focus {
+    outline: none;
+}
+/* All packages card grid */
+#packages-cards {
+    background-color: white;
+    text-align: center;
+}
+#packages-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 32px;
+    margin-bottom: 32px;
+    text-align: left;
+}
+
+/* ================================================================
+   REVIEWS PAGE  (reviews.html)
+================================================================ */
+/* Customer testimonials section */
+#reviews-list {
+    background: aliceblue;
+    text-align: center;
+}
+/* Leave a Review form section */
+#leave-review {
+    background: aliceblue;
+    text-align: center;
+}
+/* Centred review submission form */
+#review-form {
+    max-width: 720px;
+    margin: 0 auto;
+    background: white;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px lightgray;
+}
+
+/* ================================================================
+   BOOKING PAGE  (booking.html)
+================================================================ */
+/* Page background */
+#booking-section {
+    background: aliceblue;
+}
+/* Two-column layout: Budget Calculator (left) + Booking Form (right) */
+#booking-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+}
+/* ---- Budget Calculator (left column) ---- */
+#pkg-calculator {
+    background: white;
+    border-radius: 8px;
+    padding: 32px;
+    box-shadow: 0 4px 12px lightgray;
+    position: sticky;
+    top: 88px;
+}
+#pkg-calculator > h2 {
+    font-size: 1.5rem;
+    color: #1A1A2E;
+    text-align: left;
+    margin-bottom: 4px;
+}
+.calc-subtitle {
+    color: gray;
+    font-size: 0.88rem;
+    margin-bottom: 32px;
+}
+/* Optional extras checkboxes */
+#calc-extras {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 4px;
+}
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: #333333;
+    cursor: pointer;
+    padding: 6px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    user-select: none;
+}
+.checkbox-label:hover {
+    background-color: aliceblue;
+}
+.checkbox-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: steelblue;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+/* Price tag beside each extra option */
+.extra-price {
+    margin-left: 6px;
+    font-size: 0.85rem;
+    color: #333333;
+    white-space: nowrap;
+}
+.extra-price::before { content: '('; }
+.extra-price::after  { content: ')'; }
+/* Calculate button */
+#calc-budget-btn {
+    width: 100%;
+    margin-top: 16px;
+}
+/* Cost breakdown result panel (shown after calculation) */
+#calc-budget-result {
+    margin-top: 16px;
+    border-radius: 4px;
+    border: 1px solid lightsteelblue;
+    overflow: hidden;
+}
+#calc-budget-result:empty {
+    display: none;
+}
+.calc-result-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 16px;
+    background: steelblue;
+    flex-wrap: wrap;
+}
+.calc-result-name {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+.calc-breakdown {
+    padding: 8px;
+    background: white;
+}
+/* Each line in the cost breakdown */
+.calc-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 8px;
+    font-size: 0.88rem;
+    color: #333333;
+    border-bottom: 1px solid whitesmoke;
+}
+.calc-line:last-child {
+    border-bottom: none;
+}
+/* Grand total row (highlighted) */
+.calc-total {
+    font-weight: 700;
+    background: floralwhite;
+    border-bottom: none !important;
+    padding: 10px 16px !important;
+}
+.calc-total span:first-child {
+    font-size: 0.95rem;
+    color: #1A1A2E;
+}
+.calc-total span:last-child {
+    font-size: 1.2rem;
+    color: darkorange;
+}
+/* ---- Booking Form (right column) ---- */
+#booking-form-col > h2 {
+    font-size: 1.5rem;
+    color: #1A1A2E;
+    text-align: left;
+    margin-bottom: 32px;
+}
+#booking-form {
+    max-width: 720px;
+    margin: 0 auto;
+    background: white;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px lightgray;
+}
+/* Override centering when form is inside the two-column layout */
+#booking-form-col #booking-form {
+    max-width: none;
+    margin: 0;
+}
+/* Fieldset groups (Personal Info, Trip Details, Special Requests) */
+#booking-form fieldset {
+    border: 1px solid gainsboro;
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 32px;
+}
+#booking-form legend {
+    font-family: 'Georgia', serif;
+    font-size: 1.05rem;
+    color: steelblue;
+    font-weight: bold;
+    padding: 0 8px;
+}
+
+/* ================================================================
+   ABOUT PAGE  (about.html)
+================================================================ */
+/* Our Story */
+#our-story {
+    background: white;
+    text-align: center;
+}
+/* Company Timeline */
+#company-timeline {
+    background-color: aliceblue;
+    text-align: center;
+}
+#timeline-container {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: left;
+    overflow-x: auto;
+}
+.timeline-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px lightgray;
+}
+.timeline-table thead tr {
+    background: steelblue;
+    color: white;
+}
+.timeline-table th {
+    padding: 14px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: left;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+.timeline-table td {
+    padding: 14px 20px;
+    vertical-align: top;
+    font-size: 0.92rem;
+    border-bottom: 1px solid aliceblue;
+    color: #333333;
+}
+.timeline-table tbody tr:last-child td {
+    border-bottom: none;
+}
+.timeline-table tbody tr:nth-child(even) {
+    background: aliceblue;
+}
+td.timeline-year {
+    font-weight: 700;
+    color: white;
+    background: steelblue;
+    text-align: center;
+    white-space: nowrap;
+    width: 80px;
+    font-size: 1rem;
+}
+.timeline-table tbody tr:nth-child(even) td.timeline-year {
+    background: deepskyblue;
+}
+td.timeline-title {
+    font-weight: 600;
+    color: steelblue;
+    width: 220px;
+}
+td.timeline-description {
+    line-height: 1.55;
+}
+/* Awards & Achievements */
+#awards {
+    background: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#awards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 300px));
+    justify-content: center;
+    gap: 32px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+/* Individual award card */
+.award-card {
+    background: aliceblue;
+    border-radius: 8px;
+    padding: 32px;
+    text-align: center;
+    border-top: 4px solid darkorange;
+    box-shadow: 0 2px 4px lightgray;
+}
+.award-card h3 {
+    color: #1A1A2E;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+.award-card p {
+    color: gray;
+    font-size: 0.85rem;
+}
+/* Meet the Founders */
+#founders {
+    background: aliceblue;
+    text-align: center;
+}
+/* Grid of flip cards — 4-up at desktop width, reflows on narrow screens */
+#founders-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    max-width: 1040px;
+    margin: 0 auto;
+}
+/* Flip card container — hover triggers the 3D rotation */
+.founder-flip-card {
+    height: 280px;
+    perspective: 1000px;
+    cursor: default;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.65s;
+}
+.founder-flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+/* Shared styles for both card faces */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+    text-align: center;
+}
+/* Front face — white card with avatar, name and role */
+.flip-card-front {
+    background: white;
+    box-shadow: 0 2px 4px lightgray;
+}
+/* Back face — orange card showing the founder's bio */
+.flip-card-back {
+    transform: rotateY(180deg);
+    background: darkorange;
+    box-shadow: 0 4px 12px lightgray;
+}
+.flip-card-front h3 {
+    color: #1A1A2E;
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+/* Role title beneath the founder's name */
+.founder-role {
+    color: deepskyblue;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin: 0;
+}
+/* Bio text on the back face */
+.founder-bio {
+    color: white;
+    font-size: 14px;
+}
+
+/* ================================================================
+   RESPONSIVE BREAKPOINTS
+   Fluid rules above handle most reflow already: these two cover the
+   remaining cases that need a structural change rather than just
+   shrinking (nav layout direction, the booking two-column split,
+   and the filter bars).
+================================================================ */
+@media (max-width: 768px) {
+    /* Stack logo above nav instead of squeezing them onto one row */
+    #main-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+    /* Stack nav links vertically instead of wrapping mid-row */
+    #main-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    /* Budget calculator above the booking form instead of side-by-side */
+    #booking-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    /* Stack each filter control full-width instead of a cramped row */
+    #destinations-filter,
+    #packages-filter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+@media (max-width: 480px) {
+    /* Hero headings are oversized relative to a phone-width viewport */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    #page-hero h1 {
+        font-size: 1.8rem;
+    }
+    /* Default section padding is too generous on small screens */
+    section {
+        padding: 40px 16px;
+    }
+}

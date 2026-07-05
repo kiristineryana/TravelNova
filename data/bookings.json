@@ -1,0 +1,19 @@
+{
+  "bookings": [
+    {
+      "id": 1782899480759,
+      "full_name": "Kiristine Ryana",
+      "email": "kiristine.ryana@gmail.com",
+      "phone": "+971562064667",
+      "destination": "Paris, France",
+      "travel_date": "2026-07-10",
+      "travelers_count": 3,
+      "package": "1",
+      "trip_type": "leisure",
+      "special_requests": "example",
+      "estimated_total": "",
+      "selected_extras": "",
+      "submitted_at": "2026-07-01T09:51:20.760Z"
+    }
+  ]
+}

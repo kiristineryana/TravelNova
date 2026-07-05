@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reviews - TravelNova</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ========== HEADER / NAVIGATION ========== -->
+  <header id="main-header">
+    <div class="logo">
+      <img src="images/logo.png" alt="TravelNova Logo" />
+      <img src="images/title.png" alt="TravelNova" />
+    </div>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+        <li><a href="reviews.html" class="active">Reviews</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section id="page-hero" style="background-image: url('images/reviews-bg.jpg')">
+    <h1>Traveller Reviews</h1>
+    <p>Read honest reviews from our happy customers and share your own experience.</p>
+  </section>
+
+  <!-- ========== EXISTING REVIEWS ========== -->
+  <section id="reviews-list">
+    <h2>Customer Testimonials</h2>
+    <div id="reviews-container"></div>
+  </section>
+
+  <!-- ========== LEAVE A REVIEW FORM ========== -->
+  <section id="leave-review">
+    <h2>Leave a Review</h2>
+    <p>Travelled with us? We'd love to hear your feedback!</p>
+
+    <form id="review-form" novalidate>
+
+      <div class="form-group">
+        <label for="reviewer-name">Your Name <span class="required">*</span></label>
+        <input type="text" id="reviewer-name" name="reviewer_name" placeholder="e.g. Sarah Johnson" required />
+        <span class="error-msg" id="reviewer-name-error"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="reviewer-email">Email Address <span class="required">*</span></label>
+        <input type="email" id="reviewer-email" name="reviewer_email" placeholder="e.g. sarah@email.com" required />
+        <span class="error-msg" id="reviewer-email-error"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="review-destination">Destination Visited <span class="required">*</span></label>
+        <select id="review-destination" name="review_destination" required>
+          <option value="">-- Select a destination --</option>
+        </select>
+        <span class="error-msg" id="review-destination-error"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="review-rating">Rating <span class="required">*</span></label>
+        <select id="review-rating" name="review_rating" required>
+          <option value="">-- Select rating --</option>
+          <option value="5">5 - Excellent</option>
+          <option value="4">4 - Very Good</option>
+          <option value="3">3 - Good</option>
+          <option value="2">2 - Fair</option>
+          <option value="1">1 - Poor</option>
+        </select>
+        <span class="error-msg" id="review-rating-error"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="review-text">Your Review <span class="required">*</span></label>
+        <textarea id="review-text" name="review_text" rows="5" placeholder="Tell us about your experience..." required></textarea>
+        <span class="error-msg" id="review-text-error"></span>
+      </div>
+
+      <div class="form-group form-submit">
+        <button type="submit" id="review-submit-btn" class="btn btn-primary">Submit Review</button>
+        <button type="reset" class="btn btn-secondary">Clear</button>
+      </div>
+
+    </form>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="main-footer">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <p>Email: info@travelnova.com &nbsp;&nbsp;|&nbsp;&nbsp; Phone: +971 50 123 4567 &nbsp;&nbsp;|&nbsp;&nbsp; Address: Dubai, UAE</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 TravelNova. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

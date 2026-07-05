@@ -1,0 +1,12 @@
+{
+  "reviews": [
+    {
+      "id": 1782899527096,
+      "reviewer_name": "kirs",
+      "destination": "Paris, France",
+      "rating": 5,
+      "review_text": "example",
+      "date": "2026-07-01"
+    }
+  ]
+}

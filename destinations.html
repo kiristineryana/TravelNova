@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Destinations - TravelNova</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ========== HEADER / NAVIGATION ========== -->
+  <header id="main-header">
+    <div class="logo">
+      <img src="images/logo.png" alt="TravelNova Logo" />
+      <img src="images/title.png" alt="TravelNova" />
+    </div>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html" class="active">Destinations</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section id="page-hero" style="background-image: url('images/destinations-bg.jpg')">
+    <h1>Explore Destinations</h1>
+    <p>Find your perfect destination from our curated list of breathtaking locations around the world.</p>
+  </section>
+
+  <!-- ========== FILTER / SEARCH BAR ========== -->
+  <section id="destinations-filter">
+    <input type="text" id="search-input" placeholder="Search destinations..." />
+    <select id="region-filter">
+      <option value="all">All Regions</option>
+      <option value="europe">Europe</option>
+      <option value="asia">Asia</option>
+      <option value="americas">Americas</option>
+      <option value="africa">Africa</option>
+      <option value="middleeast">Middle East</option>
+      <option value="oceania">Oceania</option>
+    </select>
+    <button id="filter-btn" class="btn btn-primary">Filter</button>
+  </section>
+
+  <!-- ========== DESTINATIONS GRID ========== -->
+  <section id="destinations-page">
+    <h2>All Destinations</h2>
+    <div id="destinations-grid"></div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="main-footer">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <p>Email: info@travelnova.com &nbsp;&nbsp;|&nbsp;&nbsp; Phone: +971 50 123 4567 &nbsp;&nbsp;|&nbsp;&nbsp; Address: Dubai, UAE</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 TravelNova. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

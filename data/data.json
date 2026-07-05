@@ -1,0 +1,327 @@
+{
+  "company": {
+    "name": "TravelNova",
+    "founded": 2022,
+    "tagline": "Explore the World with Us",
+    "email": "info@travelnova.com",
+    "phone": "+971 50 123 4567",
+    "address": "Dubai, UAE",
+    "history": "TravelNova was founded in 2022 with a vision to make world travel accessible to everyone. Starting with just 1 destination, we have grown into a global travel agency serving thousands of happy travellers."
+  },
+  "founders": [
+    {
+      "id": 1,
+      "name": "Amena Inamullah",
+      "role": "Backend Developer",
+      "bio": "Developed the Node.js backend, JSON data handling, and dynamic page functionality."
+    },
+    {
+      "id": 2,
+      "name": "Diya Manoj Kumar",
+      "role": "JavaScript Developer",
+      "bio": "Handled all client-side interactivity, form validation, testing, and JS documentation."
+    },
+    {
+      "id": 3,
+      "name": "Roman Andrukhiv",
+      "role": "Frontend Developer",
+      "bio": "Built the HTML structure, web page layouts, and documented the frontend report section."
+    },
+    {
+      "id": 4,
+      "name": "Kiristine Ryana",
+      "role": "UI/UX Designer",
+      "bio": "Responsible for visual design, branding, user interface layout, and site architecture."
+    }
+  ],
+  "timeline": [
+    {
+      "year": 2022,
+      "title": "TravelNova Founded",
+      "description": "Launched with 1 destination and a team of 4."
+    },
+    {
+      "year": 2023,
+      "title": "Expanded to 4 Destinations",
+      "description": "Grew our portfolio across Europe and Asia."
+    },
+    {
+      "year": 2024,
+      "title": "Launched Online Booking",
+      "description": "Introduced our digital booking system."
+    },
+    {
+      "year": 2025,
+      "title": "Won Best Travel Agency Award",
+      "description": "Recognized by the Dubai Tourism Board."
+    },
+    {
+      "year": 2026,
+      "title": "Reached 10,000 Customers",
+      "description": "A milestone celebrating our growing community."
+    }
+  ],
+  "awards": [
+    {
+      "id": 1,
+      "title": "Best Travel Agency 2025",
+      "issuer": "Dubai Tourism Board",
+      "year": 2025
+    },
+    {
+      "id": 2,
+      "title": "Customer Choice Award 2026",
+      "issuer": "TripAdvisor",
+      "year": 2026
+    }
+  ],
+  "destinations": [
+    {
+      "id": 1,
+      "name": "Paris, France",
+      "region": "europe",
+      "description": "The city of love and lights, famous for the Eiffel Tower and world-class cuisine.",
+      "image": "images/paris-destination.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Bali, Indonesia",
+      "region": "asia",
+      "description": "A tropical paradise known for its stunning temples, rice terraces, and beaches.",
+      "image": "images/bali-destination.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Dubai, UAE",
+      "region": "middleeast",
+      "description": "A dazzling metropolis blending modern luxury with desert adventures.",
+      "image": "images/dubai-destination.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Cape Town, South Africa",
+      "region": "africa",
+      "description": "Stunning coastal scenery, Table Mountain, and vibrant culture.",
+      "image": "images/capetownadventure.jpg"
+    }
+  ],
+  "packages": [
+    {
+      "id": 1,
+      "name": "Paris Budget Trip",
+      "destination": "Paris, France",
+      "destination_id": 1,
+      "image": "images/parisb.jpeg",
+      "price_per_person": 800,
+      "category": "budget",
+      "packageType": "Budget",
+      "includes": [
+        "Hotel",
+        "Airport Transfer",
+        "City Walking Tour",
+        "Metro Pass"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Paris Romantic Getaway",
+      "destination": "Paris, France",
+      "destination_id": 1,
+      "image": "images/parisromatic.png",
+      "price_per_person": 1400,
+      "category": "mid",
+      "packageType": "Standard",
+      "includes": [
+        "Hotel",
+        "Flights",
+        "City Tour",
+        "Dinner Cruise"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Paris Luxury Experience",
+      "destination": "Paris, France",
+      "destination_id": 1,
+      "image": "images/paris-destination.jpg",
+      "price_per_person": 2800,
+      "category": "luxury",
+      "packageType": "Luxury",
+      "includes": [
+        "5-Star Hotel",
+        "Flights",
+        "Private City Tour",
+        "Wine Tasting",
+        "Museum Pass"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Bali Budget Escape",
+      "destination": "Bali, Indonesia",
+      "destination_id": 2,
+      "image": "images/bali-destination.jpg",
+      "price_per_person": 600,
+      "category": "budget",
+      "packageType": "Budget",
+      "includes": [
+        "Hotel",
+        "Airport Transfer",
+        "Temple Tour"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Bali Adventure Tour",
+      "destination": "Bali, Indonesia",
+      "destination_id": 2,
+      "image": "images/baliadventure.jpg",
+      "price_per_person": 950,
+      "category": "mid",
+      "packageType": "Standard",
+      "includes": [
+        "Hotel",
+        "Airport Transfer",
+        "Volcano Trek",
+        "Snorkeling Trip",
+        "Cooking Class"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Bali Honeymoon Package",
+      "destination": "Bali, Indonesia",
+      "destination_id": 2,
+      "image": "images/balihoneymoone.jpeg",
+      "price_per_person": 1800,
+      "category": "luxury",
+      "packageType": "Luxury",
+      "includes": [
+        "Private Villa",
+        "Flights",
+        "Couples Spa",
+        "Private Beach Dinner",
+        "Rice Terrace Tour"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Dubai Budget Escape",
+      "destination": "Dubai, UAE",
+      "destination_id": 4,
+      "image": "images/dubaibudget.jpg",
+      "price_per_person": 750,
+      "category": "budget",
+      "packageType": "Budget",
+      "includes": [
+        "Hotel",
+        "Airport Transfer",
+        "City Tour",
+        "Dhow Cruise Dinner"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Dubai Family Adventure",
+      "destination": "Dubai, UAE",
+      "destination_id": 4,
+      "image": "images/dubaifamily.jpeg",
+      "price_per_person": 1800,
+      "category": "mid",
+      "packageType": "Standard",
+      "includes": [
+        "Hotel",
+        "Flights",
+        "Desert Safari",
+        "Dubai Museum",
+        "Aquaventure Waterpark"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Dubai Luxury Experience",
+      "destination": "Dubai, UAE",
+      "destination_id": 4,
+      "image": "images/dubai-destination.jpg",
+      "price_per_person": 3500,
+      "category": "luxury",
+      "packageType": "Luxury",
+      "includes": [
+        "5-Star Hotel",
+        "Flights",
+        "Desert Safari",
+        "Yacht Tour",
+        "Fine Dining"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Cape Town Adventure Escape",
+      "destination": "Cape Town, South Africa",
+      "destination_id": 5,
+      "image": "images/capetownadventure.jpg",
+      "price_per_person": 700,
+      "category": "mid",
+      "packageType": "Standard",
+      "includes": [
+        "Hostel",
+        "Airport Transfer",
+        "Robben Island Tour",
+        "Boulders Beach Penguins"
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "reviewer_name": "Mohammed Branch",
+      "destination": "Cape Town, South Africa",
+      "rating": 4,
+      "review_text": "Absolutely magical experience! TravelNova handled everything perfectly. Will definitely book again.",
+      "date": "2024-11-15"
+    },
+    {
+      "id": 2,
+      "reviewer_name": "Liam Chen",
+      "destination": "Bali, Indonesia",
+      "rating": 4,
+      "review_text": "Amazing trip, great value for money. The hotel recommendations were spot on!",
+      "date": "2024-12-03"
+    },
+    {
+      "id": 3,
+      "reviewer_name": "Fatima Al-Rashid",
+      "destination": "Dubai, UAE",
+      "rating": 5,
+      "review_text": "Luxury package exceeded all expectations. The desert safari was unforgettable!",
+      "date": "2025-01-20"
+    }
+  ],
+  "gallery": [
+    {
+      "id": 1,
+      "image": "images/bali-destination.jpg",
+      "caption": "Sunset in Bali"
+    },
+    {
+      "id": 2,
+      "image": "images/paris-destination.jpg",
+      "caption": "Eiffel Tower at Night"
+    },
+    {
+      "id": 4,
+      "image": "images/dubai-destination.jpg",
+      "caption": "Dubai Desert Safari"
+    },
+    {
+      "id": 5,
+      "image": "images/istanbul-destination.jpg",
+      "caption": "Istanbul Cityscape"
+    },
+    {
+      "id": 6,
+      "image": "images/maldives-destination.jpeg",
+      "caption": "Maldives Paradise"
+    }
+  ]
+}
